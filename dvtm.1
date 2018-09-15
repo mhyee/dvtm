@@ -95,11 +95,11 @@ Create a new shell window using the current working directory of the focused win
 .It Ic Mod-x-x
 Close focused window.
 .
-.It Ic Mod-l
+.It Ic Mod-<
 Increases the master area width about 5% (all except grid and
 fullscreen layout).
 .
-.It Ic Mod-h
+.It Ic Mod->
 Decreases the master area width about 5% (all except grid and
 fullscreen layout).
 .
@@ -109,22 +109,22 @@ Increase number of windows displayed in the master area.
 .It Ic Mod-d
 Decrease number of windows displayed in the master area.
 .
-.It Ic Mod-j
+.It Ic Mod-N
 Focus next window.
 .
-.It Ic Mod-k
+.It Ic Mod-P
 Focus previous window.
 .
-.It Ic Mod-J
+.It Ic Mod-j
 Focus window below.
 .
-.It Ic Mod-K
+.It Ic Mod-k
 Focus window above.
 .
-.It Ic Mod-H
+.It Ic Mod-h
 Focus window to the left.
 .
-.It Ic Mod-L
+.It Ic Mod-l
 Focus window to the right.
 .
 .It Ic Mod-[0..9]
@@ -153,14 +153,23 @@ Toggle between defined layouts (affects all windows).
 .It Ic Mod-Enter
 Zooms/cycles current window to/from master area.
 .
-.It Ic Mod-f
-Change to vertical stack tiling layout.
+.It Ic Mod-g m
+Change layout to main pane on left and a stack on the left.
 .
-.It Ic Mod-b
-Change to bottom stack tiling layout.
+.It Ic Mod-g g
+Change layout to grid.
 .
-.It Ic Mod-g
-Change to grid layout.
+.It Ic Mod-g b
+Change layout to pane on top and stack on the bottom.
+.
+.It Ic Mod-g t
+Change layout to pane on bottom and stack on the top.
+.
+.It Ic Mod-g v
+Change layout to vertical stack.
+.
+.It Ic Mod-g f
+Change layout to full screen.
 .
 .It Ic Mod-s
 Show/hide the status bar.
