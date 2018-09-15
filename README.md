@@ -1,6 +1,9 @@
 My personal fork of [dvtm](https://github.com/martanne/dvtm), where I merge in
 patches I like and commit my configuration.
 
+A number of changes are inspired by
+[rpmohn's config](https://github.com/rpmohn/dvtm/tree/config).
+
 Patches include:
 
 - [Fix a compiler warning](https://github.com/martanne/dvtm/issues/64)

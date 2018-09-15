@@ -61,12 +61,20 @@ const char tags[][8] = { "1", "2", "3", "4", "5" };
 #include "bstack.c"
 #include "fullscreen.c"
 
+#define TILE_SYMBOL " │├┤ "
+
+#define GRID_SYMBOL " ├┼┤ "
+
+#define BSTACK_SYMBOL " ├┬┤ "
+
+#define FULLSCREEN_SYMBOL " │ │ "
+
 /* by default the first layout entry is used */
 static Layout layouts[] = {
-	{ "[]=", tile },
-	{ "+++", grid },
-	{ "TTT", bstack },
-	{ "[ ]", fullscreen },
+	{ TILE_SYMBOL, tile },
+	{ GRID_SYMBOL, grid },
+	{ BSTACK_SYMBOL, bstack },
+	{ FULLSCREEN_SYMBOL, fullscreen },
 };
 
 #define MOD  CTRL('g')
@@ -87,10 +95,10 @@ static KeyBinding bindings[] = {
 	{ { MOD, 'H',          }, { focusleft,      { NULL }                    } },
 	{ { MOD, 'L',          }, { focusright,     { NULL }                    } },
 	{ { MOD, 'k',          }, { focusprev,      { NULL }                    } },
-	{ { MOD, 'f',          }, { setlayout,      { "[]=" }                   } },
-	{ { MOD, 'g',          }, { setlayout,      { "+++" }                   } },
-	{ { MOD, 'b',          }, { setlayout,      { "TTT" }                   } },
-	{ { MOD, 'm',          }, { setlayout,      { "[ ]" }                   } },
+	{ { MOD, 'f',          }, { setlayout,      { TILE_SYMBOL }             } },
+	{ { MOD, 'g',          }, { setlayout,      { GRID_SYMBOL }             } },
+	{ { MOD, 'b',          }, { setlayout,      { BSTACK_SYMBOL }           } },
+	{ { MOD, 'm',          }, { setlayout,      { FULLSCREEN_SYMBOL }       } },
 	{ { MOD, ' ',          }, { setlayout,      { NULL }                    } },
 	{ { MOD, 'i',          }, { incnmaster,     { "+1" }                    } },
 	{ { MOD, 'd',          }, { incnmaster,     { "-1" }                    } },
