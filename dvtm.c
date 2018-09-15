@@ -23,7 +23,7 @@
 #include <sys/time.h>
 #include <sys/types.h>
 #include <fcntl.h>
-#include <curses.h>
+#include <ncursesw/curses.h>
 #include <stdio.h>
 #include <stdarg.h>
 #include <signal.h>
