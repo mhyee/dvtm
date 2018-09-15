@@ -6,4 +6,5 @@ Patches include:
 - [Fix a compiler warning](https://github.com/martanne/dvtm/issues/64)
 - [Visual keys](https://github.com/martanne/dvtm/pull/28)
 - [Fix a memory leak](https://github.com/martanne/dvtm/pull/76)
+- [Fix buffer corruption](https://github.com/martanne/dvtm/pull/86)
 
