@@ -59,6 +59,8 @@ const char tags[][8] = { "1", "2", "3", "4", "5" };
 #include "tile.c"
 #include "grid.c"
 #include "bstack.c"
+#include "tstack.c"
+#include "vstack.c"
 #include "fullscreen.c"
 
 #define TILE_SYMBOL " │├┤ "
@@ -67,6 +69,10 @@ const char tags[][8] = { "1", "2", "3", "4", "5" };
 
 #define BSTACK_SYMBOL " ├┬┤ "
 
+#define TSTACK_SYMBOL " ├┴┤ "
+
+#define VSTACK_SYMBOL " ├─┤ "
+
 #define FULLSCREEN_SYMBOL " │ │ "
 
 /* by default the first layout entry is used */
@@ -74,6 +80,8 @@ static Layout layouts[] = {
 	{ TILE_SYMBOL, tile },
 	{ GRID_SYMBOL, grid },
 	{ BSTACK_SYMBOL, bstack },
+	{ TSTACK_SYMBOL, tstack },
+	{ VSTACK_SYMBOL, vstack },
 	{ FULLSCREEN_SYMBOL, fullscreen },
 };
 
@@ -98,6 +106,8 @@ static KeyBinding bindings[] = {
 	{ { MOD, 'f',          }, { setlayout,      { TILE_SYMBOL }             } },
 	{ { MOD, 'g',          }, { setlayout,      { GRID_SYMBOL }             } },
 	{ { MOD, 'b',          }, { setlayout,      { BSTACK_SYMBOL }           } },
+	{ { MOD, 'B',          }, { setlayout,      { TSTACK_SYMBOL }           } },
+	{ { MOD, 'G',          }, { setlayout,      { VSTACK_SYMBOL }           } },
 	{ { MOD, 'm',          }, { setlayout,      { FULLSCREEN_SYMBOL }       } },
 	{ { MOD, ' ',          }, { setlayout,      { NULL }                    } },
 	{ { MOD, 'i',          }, { incnmaster,     { "+1" }                    } },
