@@ -7,4 +7,5 @@ Patches include:
 - [Visual keys](https://github.com/martanne/dvtm/pull/28)
 - [Fix a memory leak](https://github.com/martanne/dvtm/pull/76)
 - [Fix buffer corruption](https://github.com/martanne/dvtm/pull/86)
+- [Use mouse to select tag](https://github.com/martanne/dvtm/pull/90)
 
