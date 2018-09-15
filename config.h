@@ -55,13 +55,13 @@ static Color colors[] = {
 
 #define COLOR(c)        COLOR_PAIR(colors[c].pair)
 /* curses attributes for the currently focused window */
-#define SELECTED_ATTR   (COLOR(BLUE) | A_NORMAL)
+#define SELECTED_ATTR   (COLOR(DEFAULT) | A_NORMAL)
 /* curses attributes for normal (not selected) windows */
-#define NORMAL_ATTR     (COLOR(DEFAULT) | A_NORMAL)
+#define NORMAL_ATTR     (COLOR(DEFAULT) | A_DIM)
 /* curses attributes for a window with pending urgent flag */
-#define URGENT_ATTR     NORMAL_ATTR
+#define URGENT_ATTR     (COLOR(RED) | A_NORMAL)
 /* curses attributes for the status bar */
-#define BAR_ATTR        (COLOR(BLUE) | A_NORMAL)
+#define BAR_ATTR        (COLOR(DEFAULT) | A_DIM)
 /* characters for beginning and end of status bar message */
 #define BAR_BEGIN       ' '
 #define BAR_END         ' '
@@ -78,13 +78,13 @@ static Color colors[] = {
 /* printf format string for the tag in the status bar */
 #define TAG_SYMBOL   "[%s]"
 /* curses attributes for the currently selected tags */
-#define TAG_SEL      (COLOR(BLUE) | A_BOLD)
+#define TAG_SEL      (COLOR(BLUE) | A_NORMAL)
 /* curses attributes for not selected tags which contain no windows */
-#define TAG_NORMAL   (COLOR(DEFAULT) | A_NORMAL)
+#define TAG_NORMAL   (COLOR(DEFAULT) | A_DIM)
 /* curses attributes for not selected tags which contain windows */
-#define TAG_OCCUPIED (COLOR(BLUE) | A_NORMAL)
+#define TAG_OCCUPIED (COLOR(BLUE) | A_DIM )
 /* curses attributes for not selected tags which with urgent windows */
-#define TAG_URGENT (COLOR(BLUE) | A_NORMAL | A_BLINK)
+#define TAG_URGENT   URGENT_ATTR
 
 const char tags[][8] = { "1", "2", "3", "4", "5" };
 
