@@ -228,6 +228,7 @@ extern Screen screen;
 static unsigned int waw, wah, wax, way;
 static Client *clients = NULL;
 static char *title;
+static KeyCombo keys;
 
 #include "config.h"
 
@@ -353,6 +354,16 @@ drawbar(void) {
 	attrset(runinall ? TAG_SEL : TAG_NORMAL);
 	addstr(layout->symbol);
 	attrset(TAG_NORMAL);
+
+	if(keys) {
+		unsigned int keycount = 0;
+		while (keycount < MAX_KEYS && keys[keycount]) {
+			if (keys[keycount] < ' ')
+				printw(" ^%c", 'a' - 1 + keys[keycount++]);
+			else
+				printw("%c", keys[keycount++]);
+		}
+	}
 
 	getyx(stdscr, y, x);
 	(void)y;
@@ -1812,7 +1823,6 @@ parse_args(int argc, char *argv[]) {
 
 int
 main(int argc, char *argv[]) {
-	KeyCombo keys;
 	unsigned int key_index = 0;
 	memset(keys, 0, sizeof(keys));
 	sigset_t emptyset, blockset;
@@ -1898,6 +1908,9 @@ main(int argc, char *argv[]) {
 					memset(keys, 0, sizeof(keys));
 					keypress(code);
 				}
+				drawbar();
+				if (is_content_visible(sel))
+					wnoutrefresh(sel->window);
 			}
 			if (r == 1) /* no data available on pty's */
 				continue;
