@@ -13,12 +13,44 @@
 
 enum {
 	DEFAULT,
+	BLACK,
+	RED,
+	GREEN,
+	YELLOW,
 	BLUE,
+	MAGENTA,
+	CYAN,
+	WHITE,
+
+	BLACK_BG,
+	RED_BG,
+	GREEN_BG,
+	YELLOW_BG,
+	BLUE_BG,
+	MAGENTA_BG,
+	CYAN_BG,
+	WHITE_BG,
 };
 
 static Color colors[] = {
-	[DEFAULT] = { .fg = -1,         .bg = -1, .fg256 = -1, .bg256 = -1, },
-	[BLUE]    = { .fg = COLOR_BLUE, .bg = -1, .fg256 = 68, .bg256 = -1, },
+	[DEFAULT] = { .fg = -1, .bg = -1, .fg256 = -1, .bg256 = -1, },
+	[BLACK]   = { .fg = -1, .bg = -1, .fg256 = 0, .bg256 = -1, },
+	[RED]     = { .fg = -1, .bg = -1, .fg256 = 1, .bg256 = -1, },
+	[GREEN]   = { .fg = -1, .bg = -1, .fg256 = 2, .bg256 = -1, },
+	[YELLOW]  = { .fg = -1, .bg = -1, .fg256 = 3, .bg256 = -1, },
+	[BLUE]    = { .fg = -1, .bg = -1, .fg256 = 4, .bg256 = -1, },
+	[MAGENTA] = { .fg = -1, .bg = -1, .fg256 = 5, .bg256 = -1, },
+	[CYAN]    = { .fg = -1, .bg = -1, .fg256 = 6, .bg256 = -1, },
+	[WHITE]   = { .fg = -1, .bg = -1, .fg256 = 7, .bg256 = -1, },
+
+	[BLACK_BG]   = { .fg = -1, .bg = -1, .fg256 = -1, .bg256 = 0, },
+	[RED_BG]     = { .fg = -1, .bg = -1, .fg256 = -1, .bg256 = 1, },
+	[GREEN_BG]   = { .fg = -1, .bg = -1, .fg256 = -1, .bg256 = 2, },
+	[YELLOW_BG]  = { .fg = -1, .bg = -1, .fg256 = -1, .bg256 = 3, },
+	[BLUE_BG]    = { .fg = -1, .bg = -1, .fg256 = -1, .bg256 = 4, },
+	[MAGENTA_BG] = { .fg = -1, .bg = -1, .fg256 = -1, .bg256 = 5, },
+	[CYAN_BG]    = { .fg = -1, .bg = -1, .fg256 = -1, .bg256 = 6, },
+	[WHITE_BG]   = { .fg = -1, .bg = -1, .fg256 = -1, .bg256 = 7, },
 };
 
 #define COLOR(c)        COLOR_PAIR(colors[c].pair)
