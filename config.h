@@ -55,7 +55,7 @@ static Color colors[] = {
 
 #define COLOR(c)        COLOR_PAIR(colors[c].pair)
 /* curses attributes for the currently focused window */
-#define SELECTED_ATTR   (COLOR(BLUE) | A_NORMAL)
+#define SELECTED_ATTR   (COLOR(BLUE) | A_REVERSE)
 /* curses attributes for normal (not selected) windows */
 #define NORMAL_ATTR     (COLOR(DEFAULT) | A_DIM)
 /* curses attributes for a window with pending urgent flag */
